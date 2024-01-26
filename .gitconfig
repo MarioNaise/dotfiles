@@ -1,0 +1,17 @@
+[user]
+	email = 102912402+MarioNaise@users.noreply.github.com
+	name = MarioNaise
+[alias]
+	aa = add .
+	c = commit
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+	s = status
+	r = reset
+	rh = reset --hard
+	d = diff
+	ds = diff --staged
+[core]
+	excludesfile = ~/.gitignore
+	editor = nvim
