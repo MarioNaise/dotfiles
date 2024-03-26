@@ -2,3 +2,5 @@
 .idea
 .uuid
 lazy-lock.json
+nvim/lazyvim.json
+tmux/plugins

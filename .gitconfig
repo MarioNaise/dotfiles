@@ -15,3 +15,5 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
+[rerere]
+	enabled = true

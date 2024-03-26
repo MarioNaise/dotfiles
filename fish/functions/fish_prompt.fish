@@ -4,10 +4,14 @@ function fish_prompt --description 'Write out the prompt'
     set -l normal (set_color black -b normal)
     set -q fish_color_status
     or set -g fish_color_status red
-    set -l color_cwd white
+    set -l color_cwd $fish_color_cwd
     set -l suffix "❯"
-    set -l git_branch ""
-    set git_prompt (fish_vcs_prompt | sed "s/\(^ (\)\(.*\)\()\)/[$git_branch \2]/")
+    set -l git_branch_icon ""
+    set -l arrow ""
+    set -l git_branch (fish_vcs_prompt | sed "s/\(^ (\)\(.*\)\()\)/$git_branch_icon \2/")
+    set -l git_prompt (if not test -z $git_branch;
+        echo -s (set_color black -b $git_bg_color) $git_branch (set_color $git_bg_color -b normal) $arrow
+    end)
     # Color the prompt differently when we're root
     if functions -q fish_is_root_user; and fish_is_root_user
         if set -q fish_color_cwd_root
@@ -15,6 +19,8 @@ function fish_prompt --description 'Write out the prompt'
         end
         set suffix '$'
     end
+
+    set -l pdw_arrow_color (if test -z $git_prompt;set_color $color_cwd -b normal;else;set_color $color_cwd -b $git_bg_color;end)
 
     # Write pipestatus
     # If the status was carried over (if no command is issued or if `set` leaves the status untouched), don't bold it.
@@ -28,7 +34,8 @@ function fish_prompt --description 'Write out the prompt'
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
 
-    echo -e -s (set_color $fish_color_user) "┌─── " "["(prompt_login) (set_color $fish_color_user) "]" (set_color $color_cwd) "[" (prompt_pwd) "]" \
-        (set_color brblack -b normal) $git_prompt $prompt_status "\n" \
-        (set_color $fish_color_user) "└─ " (if not test $__fish_last_status -eq 0; set_color red; end) $suffix $normal " "
+    echo -e -s (set_color $fish_color_user) "╭───" (set_color "#1f1f28" -b $fish_color_user) $arrow (prompt_login) (set_color $fish_color_user -b $color_cwd) $arrow (set_color black -b $color_cwd) (prompt_pwd) \
+        $pdw_arrow_color $arrow $normal \
+        $git_prompt $prompt_status $normal "\n" \
+        (set_color $fish_color_user) "╰─ " (if not test $__fish_last_status -eq 0; set_color red; end) $suffix $normal " "
 end

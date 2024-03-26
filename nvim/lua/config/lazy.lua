@@ -35,7 +35,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "kanagawa" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -54,5 +54,10 @@ require("lazy").setup({
   },
 })
 
+vim.cmd("set nrformats+=alpha")
+
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 vim.cmd("hi TelescopeBorder guibg=NONE ctermbg=NONE")
+vim.cmd("hi DashboardHeader guifg=#ff9e64")
+vim.cmd("hi DashboardKey guifg=#957fb8")
+vim.cmd("hi DashboardDesc guifg=#c8c093")
