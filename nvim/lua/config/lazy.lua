@@ -53,6 +53,3 @@ require("lazy").setup({
     },
   },
 })
-
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-vim.cmd("hi TelescopeBorder guibg=NONE ctermbg=NONE")
