@@ -22,11 +22,11 @@ return {
       "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
       desc = "Switch Buffer",
     },
-    { "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+    { "<leader>/", Util.pick("live_grep"), desc = "Grep (root dir)" },
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     {
       "<leader><space>",
-      Util.telescope("files"),
+      Util.pick("files"),
       desc = "Find Files (root dir)",
     },
     -- find
@@ -36,10 +36,10 @@ return {
       '<cmd>lua require("telescope.builtin").find_files({cwd=vim.fn.stdpath("config"),hidden=true,no_ignore=true })<cr>',
       desc = "Find Config File",
     },
-    { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-    { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>ff", Util.pick("files"), desc = "Find Files (root dir)" },
+    { "<leader>fF", Util.pick("files", { cwd = false }), desc = "Find Files (cwd)" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-    { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+    { "<leader>fR", Util.pick("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
     { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
@@ -51,8 +51,8 @@ return {
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
     { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
     { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-    { "<leader>sg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-    { "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+    { "<leader>sg", Util.pick("live_grep"), desc = "Grep (root dir)" },
+    { "<leader>sG", Util.pick("live_grep", { cwd = false }), desc = "Grep (cwd)" },
     { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
     {
       "<leader>sH",
@@ -64,23 +64,23 @@ return {
     { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
     { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
     { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-    { "<leader>sw", Util.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
-    { "<leader>sW", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
+    { "<leader>sw", Util.pick("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
+    { "<leader>sW", Util.pick("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
     {
       "<leader>sw",
-      Util.telescope("grep_string"),
+      Util.pick("grep_string"),
       mode = "v",
       desc = "Selection (root dir)",
     },
     {
       "<leader>sW",
-      Util.telescope("grep_string", { cwd = false }),
+      Util.pick("grep_string", { cwd = false }),
       mode = "v",
       desc = "Selection (cwd)",
     },
     {
       "<leader>uC",
-      Util.telescope("colorscheme", { enable_preview = true }),
+      Util.pick("colorscheme", { enable_preview = true }),
       desc = "Colorscheme with preview",
     },
     {
@@ -114,12 +114,12 @@ return {
     local find_files_no_ignore = function()
       local action_state = require("telescope.actions.state")
       local line = action_state.get_current_line()
-      Util.telescope("find_files", { no_ignore = true, default_text = line })()
+      Util.pick("find_files", { no_ignore = true, default_text = line })()
     end
     local find_files_with_hidden = function()
       local action_state = require("telescope.actions.state")
       local line = action_state.get_current_line()
-      Util.telescope("find_files", { hidden = true, default_text = line })()
+      Util.pick("find_files", { hidden = true, default_text = line })()
     end
 
     return {
