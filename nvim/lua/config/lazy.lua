@@ -61,3 +61,12 @@ vim.cmd("hi TelescopeBorder guibg=NONE ctermbg=NONE")
 vim.cmd("hi DashboardHeader guifg=#ff9e64")
 vim.cmd("hi DashboardKey guifg=#957fb8")
 vim.cmd("hi DashboardDesc guifg=#c8c093")
+
+-- go
+vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
+vim.api.nvim_set_hl(0, "@lsp.type.type.go", {})
+
+-- turns off all LSP highlights
+-- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+--   vim.api.nvim_set_hl(0, group, {})
+-- end
