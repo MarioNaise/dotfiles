@@ -66,6 +66,19 @@ vim.cmd("hi DashboardDesc guifg=#c8c093")
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
 vim.api.nvim_set_hl(0, "@lsp.type.type.go", {})
 
+-- ts/js
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescript", {})
+vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescript", {})
+
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescriptreact", {})
+vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescriptreact", {})
+
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascript", {})
+vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascript", {})
+
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascriptreact", {})
+vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascriptreact", {})
+
 -- turns off all LSP highlights
 -- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 --   vim.api.nvim_set_hl(0, group, {})
