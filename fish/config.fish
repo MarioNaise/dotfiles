@@ -33,3 +33,5 @@ zoxide init fish | source
 fzf --fish | source
 source ~/.config/fish/functions/fzf-file-widget.fish
 source ~/.config/fish/functions/fzf-cd-widget.fish
+bind \cgh fzf-git-log-widget
+bind \cgg fzf-grep-widget
