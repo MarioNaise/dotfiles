@@ -31,3 +31,5 @@ zoxide init fish | source
 
 # fzf
 fzf --fish | source
+source ~/.config/fish/functions/fzf-file-widget.fish
+source ~/.config/fish/functions/fzf-cd-widget.fish
