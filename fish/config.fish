@@ -28,6 +28,3 @@ end
 
 # zoxide
 zoxide init fish | source
-
-# sdkman
-set -xg __sdkman_custom_dir "$HOME/.sdkman"
