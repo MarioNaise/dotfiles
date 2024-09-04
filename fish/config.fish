@@ -2,6 +2,7 @@ set -xg LANG en_US.UTF-8
 set -xg LC_ALL en_US.UTF-8
 set -xg LSCOLORS Exfxcxdxbxegedabagacad
 set -xg TZ Europe/Berlin
+set -xg BAT_THEME kanagawa
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"

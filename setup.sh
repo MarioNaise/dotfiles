@@ -6,7 +6,7 @@ read DIR
 DIR=${DIR/#\~/$HOME}
 DIR=${DIR/#\$HOME/$HOME}
 
-for i in nvim tmux fish; do
+for i in nvim tmux fish bat; do
   ln -s $PWD/$i $DIR/$i
 done
 ln -s $PWD/.gitconfig ~/.gitconfig
