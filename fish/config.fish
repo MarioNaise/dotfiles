@@ -28,3 +28,6 @@ end
 
 # zoxide
 zoxide init fish | source
+
+# fzf
+fzf --fish | source
