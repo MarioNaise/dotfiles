@@ -65,16 +65,19 @@ vim.cmd("hi DashboardDesc guifg=#c8c093")
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
 vim.api.nvim_set_hl(0, "@lsp.type.type.go", {})
 
--- ts/js
+-- ts
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescript", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescript", {})
 
+-- tsx
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescriptreact", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescriptreact", {})
 
+-- js
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascript", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascript", {})
 
+-- jsx
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascriptreact", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascriptreact", {})
 
