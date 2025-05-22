@@ -55,6 +55,7 @@ require("lazy").setup({
 })
 
 vim.cmd("set nrformats+=alpha")
+vim.g.snacks_animate = false
 
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 vim.cmd("hi DashboardHeader guifg=#ff9e64")
