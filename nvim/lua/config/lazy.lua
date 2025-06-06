@@ -12,7 +12,6 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.ai.copilot" },
-    { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
@@ -58,9 +57,11 @@ vim.cmd("set nrformats+=alpha")
 vim.g.snacks_animate = false
 
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-vim.cmd("hi DashboardHeader guifg=#ff9e64")
-vim.cmd("hi DashboardKey guifg=#957fb8")
-vim.cmd("hi DashboardDesc guifg=#c8c093")
+vim.cmd("hi SnacksDashboardHeader guifg=#ff9e64")
+vim.cmd("hi SnacksDashboardIcon guifg=#957fb8")
+vim.cmd("hi SnacksDashboardKey guifg=#957fb8")
+vim.cmd("hi SnacksDashboardDesc guifg=#c8c093")
+vim.cmd("hi SnacksDashboardFooter guifg=#444444")
 
 -- go
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
