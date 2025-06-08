@@ -57,6 +57,9 @@ vim.cmd("set nrformats+=alpha")
 vim.g.snacks_animate = false
 
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi NormalFloat guibg=NONE ctermbg=NONE")
+vim.cmd("hi FloatBorder guibg=NONE ctermbg=NONE")
+vim.cmd("hi FloatTitle guibg=NONE ctermbg=NONE")
 vim.cmd("hi SnacksDashboardHeader guifg=#ff9e64")
 vim.cmd("hi SnacksDashboardIcon guifg=#957fb8")
 vim.cmd("hi SnacksDashboardKey guifg=#957fb8")
