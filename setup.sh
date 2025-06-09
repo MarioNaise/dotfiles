@@ -1,11 +1,32 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-DIR=${DIR/#\~/$HOME}
-DIR=${DIR/#\$HOME/$HOME}
+options=(
+  .gitconfig
+  nvim
+  tmux
+  fish
+  bat
+  btop
+  hypr
+  kitty
+  waybar
+  wofi
+  xsettingsd
+  gtk-3.0
+  gtk-4.0
+  .gtkrc-2.0
+  wallpapers
+)
 
-for i in nvim tmux fish bat; do
-  ln -s $PWD/$i $HOME/.config/$i
+select opt in "${options[@]}"; do
+  if [[ -z $opt ]]; then
+    break
+  elif [[ $opt == ".gitconfig" || $opt == ".gtkrc-2.0" || $opt == ".themes" ]]; then
+    ln -s $PWD/$opt $HOME/$opt
+  elif [[ $opt == "bat" ]]; then
+    ln -s $PWD/$opt $HOME/.config/$opt
+    bat cache --build
+  else
+    ln -s $PWD/$opt $HOME/.config/$opt
+  fi
 done
-ln -s $PWD/.gitconfig ~/.gitconfig
-
-bat cache --build

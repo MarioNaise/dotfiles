@@ -56,8 +56,8 @@ function fish_prompt
         end
     end
 
-    set -l orange (set_color -o FF9E64 yellow)
-    set -l pink (set_color -o D27E99 red)
+    set -l orange (set_color -o FF9E64)
+    set -l pink (set_color -o D27E99)
     set -l cyan (set_color -o cyan)
     set -l yellow (set_color -o yellow)
     set -l red (set_color -o red)

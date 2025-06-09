@@ -4,9 +4,13 @@ set -xg LSCOLORS Exfxcxdxbxegedabagacad
 set -xg LS_COLORS "di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 set -xg TZ Europe/Berlin
 set -xg BAT_THEME kanagawa
+set -xg EDITOR nvim
+alias ls='ls --color=auto -F'
 
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# nix
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+end
 
 # bun
 set -xg BUN_INSTALL "$HOME/.bun"
