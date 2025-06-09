@@ -56,6 +56,8 @@ function fish_prompt
         end
     end
 
+    set -l orange (set_color -o FF9E64 yellow)
+    set -l pink (set_color -o D27E99 red)
     set -l cyan (set_color -o cyan)
     set -l yellow (set_color -o yellow)
     set -l red (set_color -o red)
@@ -63,9 +65,9 @@ function fish_prompt
     set -l blue (set_color -o blue)
     set -l normal (set_color normal)
 
-    set -l arrow_color "$green"
+    set -l arrow_color "$cyan"
     if test $__last_command_exit_status != 0
-        set arrow_color "$red"
+        set arrow_color "$pink"
     end
 
     set -l arrow "$arrow_color➜ "
@@ -73,12 +75,12 @@ function fish_prompt
         set arrow "$arrow_color# "
     end
 
-    set -l cwd $cyan(basename (prompt_pwd))
+    set -l cwd $orange(basename (prompt_pwd))
 
     set -l repo_info
     if set -l repo_type (_repo_type)
-        set -l repo_branch $red(_repo_branch_name $repo_type)
-        set repo_info "$blue $repo_type:($repo_branch$blue)"
+        set -l repo_branch $pink(_repo_branch_name $repo_type)
+        set repo_info "$cyan $repo_type:($repo_branch$cyan)"
 
         if _is_repo_dirty $repo_type
             set -l dirty "$yellow ✗"
