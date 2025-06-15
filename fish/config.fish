@@ -7,8 +7,10 @@ set -xg BAT_THEME kanagawa
 set -xg EDITOR nvim
 alias ls='ls --color=auto -F'
 
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# nix
+if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+end
 
 # bun
 set -xg BUN_INSTALL "$HOME/.bun"
