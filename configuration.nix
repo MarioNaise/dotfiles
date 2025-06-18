@@ -99,83 +99,87 @@
     nix-doc
 
     # Desktop
-    kitty
-    hyprpaper
+    brightnessctl
+    grim
     hyprlock
+    hyprpaper
+    kitty
+    nwg-look
+    pavucontrol
+    slurp
+    waybar
+    wl-clipboard
     wofi
     wofi-emoji
     xfce.thunar
-    waybar
-    brightnessctl
-    nwg-look
-    pavucontrol
-    wl-clipboard
-    grim
-    slurp
 
     # Utils
-    fd
-    ripgrep
-    fzf
-    zoxide
-    file
-    exiftool
-    entr
     bat
-    dust
-    ngrok
-    tree
     btop
-    jq
+    dust
+    entr
+    exiftool
+    fd
     ffmpeg
-    zip
-    unzip
-    lynx
+    file
+    fzf
+    hwinfo
     inetutils
-    nmap
-    tldr
+    jq
+    lynx
     mc
     ncspot
+    ngrok
+    nmap
+    ripgrep
+    tldr
+    tree
+    unzip
+    zip
+    zoxide
 
     # Dev
-    gcc
+    act
+    cargo
     clang
-    gnumake
     cmake
-    vim
-    zsh
+    copilot-cli
+    gcc
+    gh
     git
     git-lfs
-    sqlite
+    gnumake
     go
     nodejs
-    yarn
-    python3
-    tree-sitter
-    gh
-    copilot-cli
-    act
     postman
-    rustc
+    python3
+    redis
     rust-analyzer
-    cargo
+    rustc
+    sqlite
+    tree-sitter
+    vim
+    wget
+    yarn
     zig
+    zsh
 
     # Fun
-    clock-rs
-    neofetch
-    onefetch
     asciiquarium-transparent
     cbonsai
+    clock-rs
     cmatrix
     figlet
     gti
+    neofetch
+    onefetch
     pipes
 
     # Apps
     (retroarch.withCores (cores: with cores; [
       mgba
     ]))
+    firefox-devedition
     gucharmap
     gimp3
     handbrake
@@ -183,9 +187,7 @@
     # spotify
     # blender
     # arc-browser
-    # google-chrome
     # obsidian
-    # firefox-devedition
     # godot
   ];
 
@@ -200,12 +202,9 @@
     enable = true;
     clock24 = true;
   };
-  programs.firefox.enable = true;
   virtualisation.docker.enable = true;
 
-  #######################
   # Services
-  #######################
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -217,8 +216,7 @@
     pulse.enable = true;
     # jack.enable = true;
   };
-  services.nginx.enable = true;
-  services.redis.enable = true;
+  # services.nginx.enable = true;
 
   # NVIDIA
   services.xserver.videoDrivers = [ "nvidia" ];
