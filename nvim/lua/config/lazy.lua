@@ -93,4 +93,23 @@ vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascriptreact", {})
 --   vim.api.nvim_set_hl(0, group, {})
 -- end
 
-vim.filetype.add({ pattern = { [".env.*"] = "sh" }})
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  callback = function()
+    ---@diagnostic disable-next-line: missing-fields
+    require("nvim-treesitter.parsers").lox = {
+      ---@diagnostic disable-next-line: missing-fields
+      install_info = {
+        url = "~/dev/tree-sitter-lox",
+        generate = true,
+      },
+    }
+  end,
+})
+
+vim.filetype.add({
+  extension = { lox = "lox" },
+  pattern = {
+    [".env.*"] = "sh",
+  },
+})
