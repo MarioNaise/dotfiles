@@ -46,4 +46,4 @@ SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR git_bg_color:magenta
-SETUVAR nvm_default_version:v22\x2e15\x2e0
+SETUVAR nvm_default_version:v24\x2e10\x2e0

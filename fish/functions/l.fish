@@ -1,4 +1,4 @@
-function l --wraps='ls -alh' --wraps='ls -ah' --wraps='ls -la' --description 'alias l ls -la'
-  ls -la $argv
+function l --wraps='ls -alh' --description 'alias l ls -alh'
+  ls -alh $argv
         
 end
