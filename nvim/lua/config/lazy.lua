@@ -71,6 +71,7 @@ vim.cmd("hi SnacksDashboardFooter guifg=#444444")
 -- go
 vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
 vim.api.nvim_set_hl(0, "@lsp.type.type.go", {})
+vim.api.nvim_set_hl(0, "@lsp.type.string.go", {})
 
 -- ts
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescript", {})

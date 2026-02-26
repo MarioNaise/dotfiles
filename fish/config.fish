@@ -26,8 +26,8 @@ if test -d ~/.bun
 end
 
 # yarn
-if test -d ~/.yarn
-    fish_add_path --path ~/.yarn
+if test -d ~/.yarn/bin
+    fish_add_path --path ~/.yarn/bin
 end
 
 # jetbrains

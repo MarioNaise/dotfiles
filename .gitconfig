@@ -3,11 +3,15 @@
 	name = MarioNaise
 [alias]
 	aa = add .
+  b = branch
+  bd = branch -D
 	c = commit
 	cm = commit -m
 	ca = commit --amend
 	can = commit --amend --no-edit
 	s = status
+  sw = switch
+  sc = switch -c
 	r = reset
 	rh = reset --hard
 	d = diff
