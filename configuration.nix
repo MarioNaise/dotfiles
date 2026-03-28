@@ -14,25 +14,25 @@
 
   # Bootloader
   boot = {
-    plymouth = {
-      enable = true;
-      theme = "rings";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "rings" ];
-        })
-      ];
-    };
-    consoleLogLevel = 3;
-    initrd.verbose = false;
-    kernelParams = [
-      "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      "rd.systemd.show_status=auto"
-    ];
+    # plymouth = {
+    #   enable = true;
+    #   theme = "rings";
+    #   themePackages = with pkgs; [
+    #     (adi1090x-plymouth-themes.override {
+    #       selected_themes = [ "rings" ];
+    #     })
+    #   ];
+    # };
+    # consoleLogLevel = 3;
+    # initrd.verbose = false;
+    # kernelParams = [
+    #   "quiet"
+    #   "splash"
+    #   "boot.shell_on_fail"
+    #   "rd.udev.log_level=3"
+    #   "udev.log_priority=3"
+    #   "rd.systemd.show_status=auto"
+    # ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     # Hide OS choice for bootloaders (unless key is pressed)
@@ -143,6 +143,7 @@
 
     # Dev
     act
+    bun
     cargo
     clang
     cmake
@@ -153,7 +154,9 @@
     git-lfs
     gnumake
     go
+    lazygit
     nodejs
+    pnpm
     postman
     python3
     redis
@@ -181,6 +184,7 @@
     # Apps
     (retroarch.withCores (cores: with cores; [
       mgba
+      melonds
     ]))
     firefox-devedition
     gucharmap
