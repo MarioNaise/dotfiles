@@ -124,6 +124,7 @@
     ffmpeg
     file
     fzf
+    glow
     hwinfo
     inetutils
     jq
