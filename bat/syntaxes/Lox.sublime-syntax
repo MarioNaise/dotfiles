@@ -1,0 +1,63 @@
+%YAML 1.2
+---
+name: Lox
+file_extensions:
+  - lox
+scope: source.lox
+
+contexts:
+  main:
+    - match: "//.*$"
+      scope: comment.line.double-slash.lox
+
+    - match: '"'
+      scope: punctuation.definition.string.begin.lox
+      push: string
+
+    - match: '\b\d+(\.\d+)?\b'
+      scope: constant.numeric.lox
+
+    - match: '\b(class|else|for|fun|if|var|while)\b'
+      scope: keyword.control.lox
+
+    - match: '\breturn\b'
+      scope: keyword.control.return.lox
+
+    - match: '\bthis\b'
+      scope: variable.language.lox
+
+    - match: '\b(nil|true|false)\b'
+      scope: constant.language.lox
+
+    - match: '==|!=|<=|>=|\b(and|or)\b|[+\-*/=!:<>]'
+      scope: keyword.operator.lox
+
+    - match: '[\[\]{}(),.;]'
+      scope: punctuation.separator.lox
+
+    - match: '\bclass\s+([A-Za-z_][A-Za-z0-9_]*)'
+      captures:
+        1: entity.name.class.lox
+
+    - match: '\bfun\s+([A-Za-z_][A-Za-z0-9_]*)'
+      captures:
+        1: entity.name.function.lox
+
+    - match: '\b([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()'
+      scope: entity.name.function.call.lox
+
+    - match: '(\.)([A-Za-z_][A-Za-z0-9_]*)'
+      captures:
+        1: punctuation.accessor.dot.lox
+        2: variable.other.member.lox
+
+    - match: '\b[A-Za-z_][A-Za-z0-9_]*\b'
+      scope: variable.other.lox
+
+  string:
+    - meta_scope: string.quoted.double.lox
+    - match: '\\.'
+      scope: constant.character.escape.lox
+    - match: '"'
+      scope: punctuation.definition.string.end.lox
+      pop: true
