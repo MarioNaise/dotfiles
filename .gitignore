@@ -5,4 +5,3 @@ lazy-lock.json
 nvim/lazyvim.json
 tmux/plugins
 userstate.cbor
-nvim/queries/lox
