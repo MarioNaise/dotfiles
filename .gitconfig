@@ -12,9 +12,11 @@
 	s = status
   sw = switch
   sc = switch -c
+  st = stash
   sta = stash apply
   std = stash drop
   stl = stash list
+  stm = stash -m
   stp = stash pop
   sts = stash show -p
 	r = reset
