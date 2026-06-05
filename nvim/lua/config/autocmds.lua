@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("User", {
     require("nvim-treesitter.parsers").lox = {
       ---@diagnostic disable-next-line: missing-fields
       install_info = {
-        path = "~/dev/tree-sitter-lox",
+        url = "https://github.com/MarioNaise/tree-sitter-lox",
         generate = true,
         queries = "queries",
       },

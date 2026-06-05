@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -84,7 +84,7 @@
     description = "Edwin";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [];
+    # packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -100,11 +100,11 @@
 
     # Desktop
     brightnessctl
+    ghostty
     grim
     hyprlock
     hyprpaper
-    ghostty
-    kitty
+    kdePackages.dolphin
     nwg-look
     pavucontrol
     slurp
@@ -112,7 +112,6 @@
     wl-clipboard
     wofi
     wofi-emoji
-    xfce.thunar
 
     # Utils
     bat
@@ -149,11 +148,11 @@
     cargo
     clang
     cmake
-    copilot-cli
     gcc
     gh
     git
     git-lfs
+    github-copilot-cli
     gnumake
     go
     lazygit
@@ -177,9 +176,9 @@
     cbonsai
     clock-rs
     cmatrix
+    fastfetch
     figlet
     gti
-    neofetch
     onefetch
     pipes
 

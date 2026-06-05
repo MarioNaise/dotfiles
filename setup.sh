@@ -8,7 +8,7 @@ options=(
   bat
   btop
   hypr
-  kitty
+  ghostty
   waybar
   wofi
   ncspot

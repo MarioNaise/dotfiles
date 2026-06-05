@@ -5,6 +5,7 @@ set -xg LS_COLORS "di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg
 set -xg TZ Europe/Berlin
 set -xg BAT_THEME kanagawa
 set -xg EDITOR nvim
+
 alias ls='ls --color=auto -F'
 
 # nix
