@@ -103,6 +103,7 @@
     grim
     hyprlock
     hyprpaper
+    ghostty
     kitty
     nwg-look
     pavucontrol

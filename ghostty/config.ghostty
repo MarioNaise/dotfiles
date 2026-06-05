@@ -1,0 +1,25 @@
+# ghostty +show-config --default --docs
+# https://ghostty.org/docs/config
+
+font-family = JetbrainsMonoNL Nerd Font
+font-size = 15
+font-thicken = true
+
+background-blur = true
+background-opacity = 0.8
+
+title = " "
+theme = Kanagawa Wave
+cursor-color = c8c093
+split-divider-color = 727169
+
+window-padding-x = 10
+
+macos-titlebar-style = tabs
+macos-icon = xray
+
+window-inherit-working-directory = false
+mouse-hide-while-typing = true
+
+keybind = global:cmd+slash=toggle_quick_terminal
+keybind = global:cmd+u=toggle_background_opacity
