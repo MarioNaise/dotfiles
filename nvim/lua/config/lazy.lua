@@ -89,25 +89,12 @@ vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascript", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascriptreact", {})
 vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascriptreact", {})
 
+vim.api.nvim_set_hl(0, "@lsp.type.keyword.zig", {})
+
 -- turns off all LSP highlights
 -- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
 --   vim.api.nvim_set_hl(0, group, {})
 -- end
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "TSUpdate",
-  callback = function()
-    ---@diagnostic disable-next-line: missing-fields
-    require("nvim-treesitter.parsers").lox = {
-      ---@diagnostic disable-next-line: missing-fields
-      install_info = {
-        path = "~/dev/tree-sitter-lox",
-        generate = true,
-        queries = "queries",
-      },
-    }
-  end,
-})
 
 vim.filetype.add({
   extension = { lox = "lox" },
