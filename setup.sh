@@ -2,16 +2,18 @@
 
 options=(
   .gitconfig
-  nvim
-  tmux
-  fish
   bat
   btop
-  hypr
+  eza
+  fish
   ghostty
+  hypr
+  ncspot
+  nix
+  nvim
+  tmux
   waybar
   wofi
-  ncspot
   xsettingsd
   gtk-3.0
   gtk-4.0

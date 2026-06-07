@@ -16,7 +16,7 @@ split-divider-color = 727169
 window-padding-x = 10
 window-padding-y = 10
 
-macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
 macos-icon = xray
 
 window-inherit-working-directory = false

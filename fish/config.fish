@@ -3,10 +3,12 @@ set -xg LC_ALL en_US.UTF-8
 set -xg LSCOLORS Exfxcxdxbxegedabagacad
 set -xg LS_COLORS "di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 set -xg TZ Europe/Berlin
-set -xg BAT_THEME kanagawa
 set -xg EDITOR nvim
 
-alias ls='ls --color=auto -F'
+set -xg BAT_THEME kanagawa
+set -xg EZA_CONFIG_DIR ~/.config/eza
+
+alias ls='eza --git --icons=auto'
 
 # nix
 if test -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish'
@@ -18,22 +20,6 @@ if test -d ~/dev/go
     set -xg GOPATH ~/dev/go
     set -xg GOBIN $GOPATH/bin
     fish_add_path --path $GOBIN
-end
-
-# bun
-if test -d ~/.bun
-    set -xg BUN_INSTALL ~/.bun
-    fish_add_path --path $BUN_INSTALL/bin
-end
-
-# yarn
-if test -d ~/.yarn/bin
-    fish_add_path --path ~/.yarn/bin
-end
-
-# jetbrains
-if test -d ~/.jetbrains
-    fish_add_path --path ~/.jetbrains
 end
 
 # gcloud
