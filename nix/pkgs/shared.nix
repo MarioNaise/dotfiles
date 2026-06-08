@@ -56,6 +56,7 @@
     tldr
     tree
     samba
+    stow
     unzip
     zip
     zoxide

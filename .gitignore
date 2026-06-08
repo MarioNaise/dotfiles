@@ -2,6 +2,6 @@
 .idea
 .uuid
 lazy-lock.json
-nvim/lazyvim.json
-tmux/plugins
+lazyvim.json
 userstate.cbor
+act.fish
