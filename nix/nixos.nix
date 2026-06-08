@@ -9,6 +9,7 @@
     ./users/edwin.nix
 
     ./common
+
     ./pkgs/nixos.nix
     ./pkgs/shared.nix
     ./programs/nixos.nix
