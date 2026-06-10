@@ -1,0 +1,4 @@
+[plugin]
+prepend_previewers = [
+  { url = "*.lox", run = "lox-yazi" },
+]

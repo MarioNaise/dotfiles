@@ -58,6 +58,7 @@
     samba
     stow
     unzip
+    yazi
     zip
     zoxide
 
