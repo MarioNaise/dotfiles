@@ -22,5 +22,7 @@ macos-icon = xray
 window-inherit-working-directory = false
 mouse-hide-while-typing = true
 
+bell-features = system,title,attention
+
 keybind = global:cmd+slash=toggle_quick_terminal
 keybind = global:cmd+u=toggle_background_opacity

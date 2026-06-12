@@ -16,3 +16,12 @@ vim.api.nvim_create_autocmd("User", {
     }
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+  callback = function()
+    if vim.fn.exists(":LspEslintFixAll") == 2 then
+      vim.cmd("LspEslintFixAll")
+    end
+  end,
+})

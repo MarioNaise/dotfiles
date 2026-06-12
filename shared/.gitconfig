@@ -9,7 +9,15 @@
 	cm = commit -m
 	ca = commit --amend
 	can = commit --amend --no-edit
+	d = diff
+	ds = diff --staged
 	s = status
+	r = reset
+	rh = reset --hard
+  re = rebase
+  rea = rebase --abort
+  rec = rebase --continue
+  rei = rebase -i
   sw = switch
   sc = switch -c
   st = stash
@@ -19,10 +27,6 @@
   stm = stash -m
   stp = stash pop
   sts = stash show -p
-	r = reset
-	rh = reset --hard
-	d = diff
-	ds = diff --staged
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim

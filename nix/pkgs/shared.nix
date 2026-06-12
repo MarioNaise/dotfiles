@@ -19,6 +19,7 @@
     github-copilot-cli
     go
     lazygit
+    lua
     nodejs
     pnpm
     postman
@@ -53,6 +54,7 @@
     nmap
     ripgrep
     rsync
+    timg
     tldr
     tree
     samba

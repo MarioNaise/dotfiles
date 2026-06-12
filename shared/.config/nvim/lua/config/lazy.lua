@@ -68,33 +68,9 @@ vim.cmd("hi SnacksDashboardKey guifg=#957fb8")
 vim.cmd("hi SnacksDashboardDesc guifg=#c8c093")
 vim.cmd("hi SnacksDashboardFooter guifg=#444444")
 
--- go
-vim.api.nvim_set_hl(0, "@lsp.type.keyword.go", {})
-vim.api.nvim_set_hl(0, "@lsp.type.type.go", {})
-vim.api.nvim_set_hl(0, "@lsp.type.string.go", {})
-
--- ts
-vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescript", {})
-vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescript", {})
-
--- tsx
-vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.typescriptreact", {})
-vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.typescriptreact", {})
-
--- js
-vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascript", {})
-vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascript", {})
-
--- jsx
-vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.javascriptreact", {})
-vim.api.nvim_set_hl(0, "@lsp.typemod.method.defaultLibrary.javascriptreact", {})
-
-vim.api.nvim_set_hl(0, "@lsp.type.keyword.zig", {})
-
--- turns off all LSP highlights
--- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
---   vim.api.nvim_set_hl(0, group, {})
--- end
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  vim.api.nvim_set_hl(0, group, {})
+end
 
 vim.filetype.add({
   extension = { lox = "lox" },
