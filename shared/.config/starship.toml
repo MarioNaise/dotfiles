@@ -1,0 +1,24 @@
+format = '$character$directory$git_branch$git_status'
+
+add_newline = false
+
+scan_timeout = 100
+
+palette = 'kanagawa'
+
+[character]
+success_symbol = '[➜](bold cyan)'
+error_symbol = '[✗](bold red)'
+
+[directory]
+format = '[$path](bold orange)[$read_only]($read_only_style) '
+
+[git_branch]
+format = '[git:\([$branch(:$remote_branch)](bold pink)\)](bold cyan)'
+
+[git_status]
+format = '[$all_status](bold yellow) '
+
+[palettes.kanagawa]
+orange = '#ff9e64'
+pink = '#d27e99'

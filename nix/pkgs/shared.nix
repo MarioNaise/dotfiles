@@ -58,6 +58,7 @@
     tldr
     tree
     samba
+    starship
     stow
     unzip
     yazi
